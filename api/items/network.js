@@ -2,7 +2,9 @@ const { Router } = require('express');
 const response = require('../../network/response')
 const router = Router();
 const ctrl = require('./index');
-const {tiMonth} = require('../../calculators/environment')
+const {tiMonth} = require('../../calculators/environment');
+const { calcularAreaCirculo } = require('../../calculators/calcular-area-circulo');
+
 
 const tableInjected = 'my_table'
 
@@ -16,6 +18,14 @@ router.get('/list', async (req, res) => {
     }
 })
 
+router.get('/test_network/:radio', async (req, res) => {
+    try {
+        const radio = req.params.radio
+        response.success(req, res, calcularAreaCirculo(radio), 200)
+    } catch (error) {
+        response.error(req, res, error.message, 500)
+    }
+})
 
 router.get('/list2', async (req, res) => {
     try {
