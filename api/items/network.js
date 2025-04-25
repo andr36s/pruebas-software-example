@@ -2,8 +2,9 @@ const { Router } = require('express');
 const response = require('../../network/response')
 const router = Router();
 const ctrl = require('./index');
-const {tiMonth} = require('../../calculators/environment');
+const {tiMonth, fuelEnergySelector} = require('../../calculators/environment');
 const { calcularAreaCirculo } = require('../../calculators/calcular-area-circulo');
+const { describe } = require('pm2');
 
 
 const tableInjected = 'my_table'
@@ -27,9 +28,13 @@ router.get('/test_network/:radio', async (req, res) => {
     }
 })
 
-router.get('/list2', async (req, res) => {
+router.get('/env_test', async (req, res) => {
     try {
-        response.success(req, res, tiMonth(1.4), 200);    
+        const list = {
+            "month_inflation": tiMonth(2.8),
+            "fuel_selected": fuelEnergySelector("Gasolina")
+        }
+        response.success(req, res, list, 200);    
     } catch (error) {
         response.error(req, res, error.message, 500); 
     }

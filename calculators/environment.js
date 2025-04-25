@@ -4,19 +4,24 @@ const tiMonth = (ipc) => {
     return ti
 } 
 
-const fuelEnergySelector = async (data, scraping) => {
+const fuelEnergySelector = (data) => {
     let fuel_info = {}
-    if (data === 'diesel' || data == 'Diesel') {
-        fuel_info['fuel_price'] = scraping['diesel_price']
-        fuel_info['fuel_energy'] = ('diesel_energy')
-        fuel_info['emision_factor'] = ('emision_factor_diesel')
+    if (data.toLowerCase() === 'diesel') {
+        fuel_info['fuel_price'] = 12000
+        fuel_info['fuel_energy'] = 40.7
+        fuel_info['emision_factor'] = 70.4
         return fuel_info
     }
-    else {
-        fuel_info['fuel_price'] = scraping['fuel_price']
-        fuel_info['fuel_energy'] = ('gasoline_energy')
-        fuel_info['emision_factor'] = ('emision_factor_gasoline')
+    else if(data.toLowerCase() === 'gasolina') {
+        fuel_info['fuel_price'] = 16700
+        fuel_info['fuel_energy'] = 38.58
+        fuel_info['emision_factor'] = 69.25
         return fuel_info
+    } else {
+        return {
+            "error": "Tipo de combustible no reconocido",
+            "error_code": 500
+        }
     }
 }
 
