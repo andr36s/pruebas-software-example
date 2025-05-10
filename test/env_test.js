@@ -1,11 +1,7 @@
 const assert = require('assert');
-const {tiMonth, fuelEnergySelector} = require("../calculators/environment")
+const {tiMonth, fuelEnergySelector, fuelConsumption, costElectricalKM} = require("../calculators/environment")
 
-// test('env_ipc', () => { 
-//     assert.strictEqual(tiMonth(1.4), 5)
-// })
-
-describe("testFuelSelector", () => {
+describe("testFuelSelector - Andrés Gómez", () => {
     it("Diesel", () => {
         assert.deepEqual(fuelEnergySelector("Diesel"), {
             "fuel_price": 12000,
@@ -29,8 +25,17 @@ describe("testFuelSelector", () => {
         })
     })
     
-    it("", () => {
-        // assert.deepEqual(fuelEnergySelector(""), )
-    })
+    it("Combustible con baja energía y alto consumo", () => {
+    const combustion = 5; // muy alto
+    const fuel_energy = 10; // muy bajo
+    const result = fuelConsumption(combustion, fuel_energy);
+    
+    assert.strictEqual(result, 0.5);
+    });
+
+    it("Costo por km con consumo eléctrico 0", () => {
+    const cost = costElectricalKM(0, 250); // energía cuesta 250 sin consumir
+    assert.strictEqual(cost, 0);
+    });
 
 })
