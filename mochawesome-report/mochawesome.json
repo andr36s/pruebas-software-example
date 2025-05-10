@@ -1,0 +1,157 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-10T17:08:12.266Z",
+    "end": "2025-05-10T17:08:12.271Z",
+    "duration": 5,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "68f61b7f-fdc4-44fa-9ceb-9de4fee16adb",
+      "title": "",
+      "fullFile": "/workspaces/pruebas-software-example/test/env_test.js",
+      "file": "/test/env_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1035fc9c-eae6-4d98-a09c-f721f7b38667",
+          "title": "testFuelSelector",
+          "fullFile": "/workspaces/pruebas-software-example/test/env_test.js",
+          "file": "/test/env_test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Diesel",
+              "fullTitle": "testFuelSelector Diesel",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "assert.deepEqual(fuelEnergySelector(\"Diesel\"), {\n    \"fuel_price\": 12000,\n    \"fuel_energy\": 40.7,\n    \"emision_factor\": 70.4\n  })",
+              "err": {},
+              "uuid": "f0cf207a-a475-49c1-8261-7931ce53d969",
+              "parentUUID": "1035fc9c-eae6-4d98-a09c-f721f7b38667",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Gasolina",
+              "fullTitle": "testFuelSelector Gasolina",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "assert.deepEqual(fuelEnergySelector(\"Gasolina\"), {\n    \"fuel_price\": 16700,\n    \"fuel_energy\": 38.58,\n    \"emision_factor\": 69.25\n  })",
+              "err": {},
+              "uuid": "56ec01fd-bd08-4c73-b824-855c697a0b8b",
+              "parentUUID": "1035fc9c-eae6-4d98-a09c-f721f7b38667",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DatoDiferente",
+              "fullTitle": "testFuelSelector DatoDiferente",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "assert.deepEqual(fuelEnergySelector(\"Perro\"), {\n    \"error\": \"Tipo de combustible no reconocido\",\n    \"error_code\": 500\n})",
+              "err": {},
+              "uuid": "bc08fd14-8f1f-4c39-8cfe-b3394c9bc734",
+              "parentUUID": "1035fc9c-eae6-4d98-a09c-f721f7b38667",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "",
+              "fullTitle": "testFuelSelector ",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// assert.deepEqual(fuelEnergySelector(\"\"), )",
+              "err": {},
+              "uuid": "90cc3f06-f03b-4747-8558-6ee3e9d0338a",
+              "parentUUID": "1035fc9c-eae6-4d98-a09c-f721f7b38667",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f0cf207a-a475-49c1-8261-7931ce53d969",
+            "56ec01fd-bd08-4c73-b824-855c697a0b8b",
+            "bc08fd14-8f1f-4c39-8cfe-b3394c9bc734",
+            "90cc3f06-f03b-4747-8558-6ee3e9d0338a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
